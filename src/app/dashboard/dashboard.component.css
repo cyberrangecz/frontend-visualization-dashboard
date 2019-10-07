@@ -1,0 +1,13 @@
+#header {
+    background: #3f51b5;
+    padding: 0.5em;
+    color: white;
+    text-shadow: 0 1px 0 grey;
+}
+
+* {
+    font-family: Roboto, Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
