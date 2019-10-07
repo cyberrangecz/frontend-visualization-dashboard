@@ -1,0 +1,75 @@
+.dashboard-container {
+    background: #fafafa;
+}
+
+#upload-button-wrapper {
+    text-align: center;
+    margin: 1.5em;
+}
+
+#upload-button-wrapper label {
+    margin-left: 1em;
+}
+
+.upload-button {
+    padding: 0.5em;
+    background: #5c75a7;
+    color: white;
+    cursor: pointer;
+    display: block;
+}
+
+.upload-button:hover {
+    background: #335291;
+}
+
+.vis {
+    background: white;
+    border: solid 1px #d0d0d0;
+    margin: 5px 10px;
+}
+
+.vis.left {
+    margin: 5px 5px 5px 10px;
+    width: 50%;
+}
+
+.vis.right {
+    margin: 5px 10px 5px 5px;
+    width: 50%;
+}
+
+.name-header, .ng-star-inserted {
+    font-size: 15px !important;
+    padding: 10px;
+    border-bottom: 1px solid;
+    border-bottom-color: rgba(0,0,0,.12);
+
+}
+
+#legend-nav {
+    /*background: rgba(255,255,255,.9);*/
+    background: buttonface;
+    /*height: 50px;*/
+}
+
+#help-sign {
+    /*float: right;*/
+    min-width: 14px;
+}
+
+:not(.mat-drawer-opened) .mat-drawer.mat-drawer-end {
+    right: 45px;
+}
+
+.mat-drawer-opened .mat-drawer.mat-drawer-end {
+    right: 0px !important;
+}
+
+.overview-visualization-container {
+    width: 100%;
+}
+
+.vis .container div:first-of-type {
+    margin: auto;
+}

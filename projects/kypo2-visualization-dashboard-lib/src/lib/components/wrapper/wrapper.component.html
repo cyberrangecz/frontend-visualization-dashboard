@@ -1,0 +1,60 @@
+<mat-sidenav-container class="dashboard-container">
+  <mat-sidenav #sidenav style="" mode="over" position="end" id="legend-nav" [fixedInViewport]="true" [fixedTopGap]="38" [fixedBottomGap]="300">
+    <button style="visibility: visible;" mat-button id="help-sign" (click)="sidenav.toggle()"> ... </button> Settings
+    <div id="upload-button-wrapper">
+      <label for="upload-button" class="upload-button">Upload JSON event file</label>
+      <input type="file" id="upload-button" style="display: none" (change)="onEventUpload($event)" accept=".json" />
+
+      <label for="upload-game" class="upload-button">Upload JSON game file</label>
+      <input type="file" id="upload-game" style="display: none" (change)="onGameUpload($event)" accept=".json" />
+    </div>
+    <app-legend>loading</app-legend>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div style="display: flex">
+      <div class="vis left">
+        <div class="name-header">Achieved score overview</div>
+      <kypo2-viz-overview-clustering
+              [jsonGameData]="jsonGameData"
+              [size]="{ width: innerWidth / 2, height: 300 }"
+              [trainingInstanceId]="11"
+              [trainingDefinitionId]="5"
+              [eventService]="eventService"
+              [useLocalMock]="true"
+      ></kypo2-viz-overview-clustering>
+      </div>
+      <div class="vis right">
+        <div class="name-header">Game-run final overview</div>
+      <kypo2-viz-hurdling
+              [jsonGameData]="jsonGameData"
+              [trainingDefinitionId]="5"
+              [trainingInstanceId]="11"
+              [showProgressView]=false
+              [enableViewMenu]=false
+              [eventService]="eventService"
+              [useLocalMock]="true"
+      ></kypo2-viz-hurdling>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<div class="vis" style="display: flex; justify-content: center;"
+     [style.display]="isAnyPlayerHighlighted ? 'flex' : 'none'">
+  <div class="overview-visualization-container">
+    <div class="name-header">Timeline of score development</div>
+    <kypo2-viz-overview-line class="vis-timeline"
+            [size]="{ width: innerWidth*1.35, height: 400 }"
+            [jsonGameData]="jsonGameData"
+            [trainingDefinitionId]="5"
+            [trainingInstanceId]="11"
+            [useLocalMock]="true"
+    ></kypo2-viz-overview-line>
+  </div>
+  <!--<div style="margin-top: 10%; margin-bottom: 2.5em">
+    <kypo2-viz-overview-filters></kypo2-viz-overview-filters>
+  </div>-->
+</div>
+
+
+
