@@ -18,8 +18,11 @@ import {GameData} from 'kypo2-trainings-hurdling-viz-lib/lib/visualization/model
 export class WrapperComponent implements OnInit {
     mockFeedbackLearnerId = null;
     mockGameData = { information: GAME_INFORMATION, events: EVENTS };
-    jsonGameData = {information: null, events: null};
-    colorScheme = ['#307bc1', '#41ae43', '#ff9d3c', '#fc5248', '#f2d64f', '#8035c6'];
+    jsonGameData = {information: GAME_INFORMATION, events: EVENTS};
+     colorScheme = ['#307bc1', '#41ae43', '#ff9d3c', '#fc5248', '#FFCD34', '#1D8ABD'];
+    // colorScheme = ['#EDF9B1', '#C7E9B4', '#7FCDBB', '#41B6C4', '#9DC4DC', '#007C9D'];
+    // colorScheme = ['#FFE8AF', '#FFCD33', '#47ACB1', '#F26522', '#F9AA7B', '#A5A8AA'];
+    // colorScheme = ['#DFE8EA', '#009BC3', '#A8CBD4', '#486375', '#51B3CC'];
     hideCSVUpload = true;
     csvFile;
     private d3: D3;
