@@ -1,4 +1,5 @@
 <mat-sidenav-container class="dashboard-container">
+ <!--
   <mat-sidenav #sidenav style="" mode="over" position="end" id="legend-nav" [fixedInViewport]="true" [fixedTopGap]="38" [fixedBottomGap]="300">
     <button style="visibility: visible;" mat-button id="help-sign" (click)="sidenav.toggle()"> ... </button> Settings
     <div id="upload-button-wrapper">
@@ -10,18 +11,19 @@
     </div>
     <app-legend>loading</app-legend>
   </mat-sidenav>
-
+-->
   <mat-sidenav-content>
     <div style="display: flex">
       <div class="vis left">
         <div class="name-header">Achieved score overview</div>
       <kypo2-viz-overview-clustering
               [jsonGameData]="jsonGameData"
-              [size]="{ width: innerWidth / 2, height: 300 }"
+              [size]="{ width: innerWidth / 2, height: 400 }"
               [trainingInstanceId]="11"
               [trainingDefinitionId]="5"
               [eventService]="eventService"
               [useLocalMock]="true"
+              [colorScheme]="colorScheme"
       ></kypo2-viz-overview-clustering>
       </div>
       <div class="vis right">
@@ -34,6 +36,7 @@
               [enableViewMenu]=false
               [eventService]="eventService"
               [useLocalMock]="true"
+              [colorScheme]="colorScheme"
       ></kypo2-viz-hurdling>
       </div>
     </div>
@@ -43,17 +46,17 @@
      [style.display]="isAnyPlayerHighlighted ? 'flex' : 'none'">
   <div class="overview-visualization-container">
     <div class="name-header">Timeline of score development</div>
-    <kypo2-viz-overview-line class="vis-timeline"
-            [size]="{ width: innerWidth*1.35, height: 400 }"
-            [jsonGameData]="jsonGameData"
-            [trainingDefinitionId]="5"
-            [trainingInstanceId]="11"
-            [useLocalMock]="true"
-    ></kypo2-viz-overview-line>
-  </div>
-  <!--<div style="margin-top: 10%; margin-bottom: 2.5em">
-    <kypo2-viz-overview-filters></kypo2-viz-overview-filters>
-  </div>-->
+    <div style="display: flex; justify-content: center;" class="vis-timeline">
+      <kypo2-viz-overview-line
+              [size]="{ width: innerWidth*0.7, height: 400 }"
+              [jsonGameData]="jsonGameData"
+              [useLocalMock]="true"
+              [colorScheme]="colorScheme"
+      ></kypo2-viz-overview-line>
+      <div style="margin-top: 10%; margin-bottom: 2.5em">
+       <kypo2-viz-overview-filters></kypo2-viz-overview-filters>
+      </div>
+    </div>
 </div>
 
 
