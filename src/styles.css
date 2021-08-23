@@ -1,2 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.player-tooltip {
+    font-family: Roboto, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 11px !important;
+    color: white;
+    z-index: 1;
+    text-align: center;
+    padding: 5px 10px !important;
+    background: #5b5c5e;
+    border: 0px;
+    border-radius: 3px !important;
+    opacity: 0.9;
+}

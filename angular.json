@@ -25,7 +25,7 @@
             "styles": [
               "node_modules/normalize.css/normalize.css",
               "src/styles.css",
-              "node_modules/kypo2-trainings-visualization-overview-lib/styles.css"
+              "node_modules/@muni-kypo-crp/overview-visualization/styles.css"
             ],
             "scripts": []
           },

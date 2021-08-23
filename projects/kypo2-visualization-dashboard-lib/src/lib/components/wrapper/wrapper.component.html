@@ -1,63 +1,65 @@
 <mat-sidenav-container class="dashboard-container">
- <!--
-  <mat-sidenav #sidenav style="" mode="over" position="end" id="legend-nav" [fixedInViewport]="true" [fixedTopGap]="38" [fixedBottomGap]="300">
-    <button style="visibility: visible;" mat-button id="help-sign" (click)="sidenav.toggle()"> ... </button> Settings
-    <div id="upload-button-wrapper">
-      <label for="upload-button" class="upload-button">Upload JSON event file</label>
-      <input type="file" id="upload-button" style="display: none" (change)="onEventUpload($event)" accept=".json" />
-
-      <label for="upload-game" class="upload-button">Upload JSON game file</label>
-      <input type="file" id="upload-game" style="display: none" (change)="onGameUpload($event)" accept=".json" />
-    </div>
-    <app-legend>loading</app-legend>
-  </mat-sidenav>
--->
   <mat-sidenav-content>
-    <div style="display: flex">
-      <div class="vis left">
-        <div class="name-header">Achieved score overview</div>
-      <kypo2-viz-overview-clustering
-              [jsonGameData]="jsonGameData"
-              [size]="{ width: innerWidth / 2, height: 400 }"
-              [trainingInstanceId]="11"
-              [trainingDefinitionId]="5"
-              [eventService]="eventService"
-              [useLocalMock]="true"
-              [colorScheme]="colorScheme"
-      ></kypo2-viz-overview-clustering>
-      </div>
-      <div class="vis right">
-        <div class="name-header">Game-run final overview</div>
+    <kypo2-viz-overview-filters
+            (outputSelectedFilters)="onFilterChange($event)"
+            (outputPlayerView)="togglePlayerView($event)">
+    </kypo2-viz-overview-filters>
+    <kypo2-viz-hurdling-player-selection
+            [visualizationData]="visualizationData"
+            [selectedPlayerView]="selectedPlayerView"
+            (outputFilteredPlayers)="onTraineeFilter($event)">
+    </kypo2-viz-hurdling-player-selection>
+    <div class="vis" style="display: block; justify-content: center;">
+      <div class="name-header">Training Overview</div>
       <kypo2-viz-hurdling
-              [jsonGameData]="jsonGameData"
-              [trainingDefinitionId]="5"
+              [externalFilters]="filters"
               [trainingInstanceId]="11"
-              [showProgressView]=false
-              [enableViewMenu]=false
+              [selectedPlayerView]="selectedPlayerView"
+              [setDashboardView]=true
+              [eventService]="eventService"
+              [colorScheme]="colorScheme"
+              [playerColorScheme]="playerColorScheme.reverse()"
+              (outputSelectedPlayers)="onTraineeChange($event)"
+      ></kypo2-viz-hurdling>
+    </div>
+
+    <div class="vis left" [ngStyle]="{'width': innerWidth * 0.5 + 'px'}">
+      <div class="name-header">Time-Score Overview</div>
+      <kypo2-viz-overview-clustering
+              [size]="{ width: innerWidth * 0.45, height: 400 }"
+              [trainingInstanceId]="11"
+              [trainingDefinitionId]="5"
               [eventService]="eventService"
               [useLocalMock]="true"
-              [colorScheme]="colorScheme"
-      ></kypo2-viz-hurdling>
+              [colorScheme]="filteredColorScheme"
+      ></kypo2-viz-overview-clustering>
+    </div>
+    <div class="vis right overflow overview-line {{!isAnyPlayerHighlighted ?  'hidden' : ''}}"
+         [ngStyle]="{'width': innerWidth * 0.5 + 'px', 'justify-content': 'center', 'height': '742px'}">
+      <div class="overview-visualization-container">
+        <div class="name-header">Individual Walkthrough for
+          <span *ngFor="let trainee of traineeArray">
+          <ng-container *ngIf="isPlayerTimelineVisible(trainee.id)">
+            <img *ngIf="selectedPlayerView === 'avatar'" class="trainee-avatar" src="data:image/png;base64,{{trainee.avatar}}" width="18" align="top"/>
+          </ng-container>
+          </span>
+          <span *ngIf="selectedPlayerView === 'name'">selected trainees</span>
+        </div>
+        <div class="vis-timeline">
+
+          <kypo2-viz-overview-line
+                  [size]="{ width: innerWidth * 0.43, height: 400 }"
+                  [useLocalMock]="true"
+                  [colorScheme]="colorScheme"
+          ></kypo2-viz-overview-line>
+
+        </div>
       </div>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
-<div class="vis" style="display: flex; justify-content: center;"
-     [style.display]="isAnyPlayerHighlighted ? 'flex' : 'none'">
-  <div class="overview-visualization-container">
-    <div class="name-header">Timeline of score development</div>
-    <div style="display: flex; justify-content: center;" class="vis-timeline">
-      <kypo2-viz-overview-line
-              [size]="{ width: innerWidth*0.7, height: 400 }"
-              [jsonGameData]="jsonGameData"
-              [useLocalMock]="true"
-              [colorScheme]="colorScheme"
-      ></kypo2-viz-overview-line>
-      <div style="margin-top: 10%; margin-bottom: 2.5em">
-       <kypo2-viz-overview-filters></kypo2-viz-overview-filters>
-      </div>
-    </div>
-</div>
+
+
 
 
 
