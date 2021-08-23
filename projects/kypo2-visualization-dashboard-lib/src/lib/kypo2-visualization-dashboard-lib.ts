@@ -1,3 +1,4 @@
 export class Kypo2VisualizationDashboardConfig {
-  restBaseUrl: string;
+  trainingServiceUrl: string;
+  elasticSearchServiceUrl: string;
 }

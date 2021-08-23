@@ -1,20 +1,19 @@
 import { Injectable } from '@angular/core';
-import { ClusteringLevelsEventService } from 'kypo2-trainings-visualization-overview-lib/lib/components/clustering/interfaces/clustering-levels-event-service';
-import { ClusteringFinalEventService } from 'kypo2-trainings-visualization-overview-lib/lib/components/clustering/interfaces/clustering-final-event-service';
-import { GameAnalysisEventService } from 'kypo2-trainings-hurdling-viz-lib/lib/visualization/models/game-analysis-event-service';
-import { LevelsComponent, FinalComponent, ClusteringComponent } from 'kypo2-trainings-visualization-overview-lib';
-import { PlayerVisualizationData } from 'kypo2-trainings-visualization-overview-lib/lib/components/clustering/interfaces/player-visualization-data';
-import { GameAnalysisComponent } from 'kypo2-trainings-hurdling-viz-lib';
-import { Subject } from 'rxjs';
-import { LineComponent } from 'kypo2-trainings-visualization-overview-lib/lib/components/timeline/line/line.component';
+import { ClusteringLevelsEventService } from '@muni-kypo-crp/overview-visualization/lib/components/agenda/clustering/interfaces/clustering-levels-event-service';
+import { ClusteringFinalEventService } from '@muni-kypo-crp/overview-visualization/lib/components/agenda/clustering/interfaces/clustering-final-event-service';
+// import { TrainingAnalysisEventService } from '@muni-kypo-crp/hurdling-visualization/lib/visualization/models/training-analysis-event-service';
+import {LevelsComponent, FinalComponent, LineComponent } from '@muni-kypo-crp/overview-visualization';
+import { PlayerData } from '@muni-kypo-crp/overview-visualization/lib/components/model/clustering/player-data';
+import { TrainingAnalysisComponent } from '@muni-kypo-crp/hurdling-visualization/lib/visualization/components/visualizations/training-analysis/training-analysis.component';
+import {PlayerLevelData} from '@muni-kypo-crp/overview-visualization/lib/components/model/clustering/player-level-data';
 
 @Injectable({
   providedIn: 'root'
 })
-export class EventService implements ClusteringLevelsEventService, ClusteringFinalEventService, GameAnalysisEventService {
+export class EventService implements ClusteringLevelsEventService, ClusteringFinalEventService/*, TrainingAnalysisEventService */{
 
   clusteringLevelsComponent: LevelsComponent;
-  gameAnalysisComponent: GameAnalysisComponent;
+  gameAnalysisComponent: TrainingAnalysisComponent;
   clusteringFinalComponent: FinalComponent;
   timelineComponent: LineComponent;
 
@@ -22,26 +21,25 @@ export class EventService implements ClusteringLevelsEventService, ClusteringFin
      * Hurdling Vis Events
      *************************/
 
-  gameAnalysisOnBarMouseover(playerId: string): void {
+  gameAnalysisOnBarMouseover(playerId: number): void {
     this.clusteringFinalComponent.highlightHoveredPlayer({
       id: playerId
-    } as PlayerVisualizationData);
+    } as PlayerData);
     this.clusteringFinalComponent.outputSelectedPlayerId.emit(playerId);
     this.timelineComponent.highlightLine(playerId);
   }
-  gameAnalysisOnBarMouseout(playerId: string): void {
+  gameAnalysisOnBarMouseout(playerId: number): void {
     this.clusteringFinalComponent.unhighlightHoveredPlayer({
       id: playerId
-    } as PlayerVisualizationData);
+    } as PlayerData);
 
     this.clusteringFinalComponent.outputSelectedPlayerId.emit();
-    this.timelineComponent.unhighlightLine(playerId);
+    this.timelineComponent.unhighlightLine(playerId.toString());
   }
   gameAnalysisOnBarClick(playerId: string): void {
-    console.log(playerId);
     this.timelineComponent.onRowClicked({id: playerId});
   }
-  registerGameAnalysisComponent(component: GameAnalysisComponent): void {
+  registerGameAnalysisComponent(component: TrainingAnalysisComponent): void {
     this.gameAnalysisComponent = component;
   }
 
@@ -49,38 +47,38 @@ export class EventService implements ClusteringLevelsEventService, ClusteringFin
      * Clustering Vis Events
      *************************/
 
-  clusteringFinalOnPlayerMouseover(player: PlayerVisualizationData): void {
+  clusteringFinalOnPlayerMouseover(player: PlayerData): void {
       this.gameAnalysisComponent.highlightGivenPlayer(player.id);
       this.timelineComponent.highlightLine(player.id);
   }
-  clusteringFinalOnPlayerMousemove(player: PlayerVisualizationData): void {
+  clusteringFinalOnPlayerMousemove(player: PlayerData): void {
     // throw new Error("Method not implemented.");
   }
-  clusteringFinalOnPlayerMouseout(player: PlayerVisualizationData): void {
+  clusteringFinalOnPlayerMouseout(player: PlayerData): void {
       this.gameAnalysisComponent.unhighlightGivenPlayer(player.id);
-      this.timelineComponent.unhighlightLine(player.id);
+      this.timelineComponent.unhighlightLine(player.id.toString());
   }
-  clusteringFinalOnPlayerClick(player: PlayerVisualizationData): void {
-      this.gameAnalysisComponent.preserveHighlightedPlayer(player.id); // todo fix?
-      this.timelineComponent.onRowClicked(player);
+  clusteringFinalOnPlayerClick(player: PlayerData): void {
+      // this.gameAnalysisComponent.preserveHighlightedPlayer(player.id); // unused
+      // this.timelineComponent.onRowClicked(player);
   }
   registerClusteringFinalComponent(component: FinalComponent): void {
     this.clusteringFinalComponent = component;
   }
-  clusteringLevelsOnPlayerMouseover(player: PlayerVisualizationData): void {
+  clusteringLevelsOnPlayerMouseover(player: PlayerLevelData): void {
     this.gameAnalysisComponent.highlightGivenPlayer(player.id);
     this.timelineComponent.highlightLine(player.id);
   }
-  clusteringLevelsOnPlayerMousemove(player: PlayerVisualizationData): void {
+  clusteringLevelsOnPlayerMousemove(player: PlayerData): void {
     // throw new Error("Method not implemented.");
   }
-  clusteringLevelsOnPlayerMouseout(player: PlayerVisualizationData): void {
+  clusteringLevelsOnPlayerMouseout(player: PlayerLevelData): void {
     this.gameAnalysisComponent.unhighlightGivenPlayer(player.id);
-    this.timelineComponent.unhighlightLine(player.id);
+    this.timelineComponent.unhighlightLine(player.id.toString());
   }
-  clusteringLevelsOnPlayerClick(player: PlayerVisualizationData): void {
-    this.gameAnalysisComponent.preserveHighlightedPlayer(player.id); // not working - fix
-    this.timelineComponent.onRowClicked(player);
+  clusteringLevelsOnPlayerClick(player: PlayerLevelData): void {
+    // this.gameAnalysisComponent.preserveHighlightedPlayer(player.id); // unused
+    // this.timelineComponent.onRowClicked(player);
   }
   registerClusteringLevelsComponent(component: LevelsComponent): void {
     this.clusteringLevelsComponent = component;
@@ -92,6 +90,10 @@ export class EventService implements ClusteringLevelsEventService, ClusteringFin
 
   registerTimelineComponent(component: LineComponent): void {
     this.timelineComponent = component;
+  }
+
+  timelineSwitchPlregisterGameAnalysisComponentayerVisibility(playerId: string, visibility: boolean): void {
+    //this.timelineComponent.setPlayerVisibility(playerId, visibility); //TODO changed after refactor
   }
 
   constructor() { }

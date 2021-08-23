@@ -1,12 +1,13 @@
-import {RouterModule, Routes} from '@angular/router';
-import {NgModule} from '@angular/core';
-import {Kypo2AuthGuardWithLogin, Kypo2AuthProviderPickerComponent, Kypo2NotAuthGuardService} from 'kypo2-auth';
+import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import {SentinelAuthProviderListComponent} from '@sentinel/auth/components';
+import {SentinelAuthGuardWithLogin, SentinelNegativeAuthGuard} from '@sentinel/auth/guards';
 
 const routes: Routes = [
   {
     path: 'dashboard',
-    loadChildren: 'app/dashboard/dashboard.module#DashboardModule',
-    canActivate: [Kypo2AuthGuardWithLogin],
+    loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),
+    canActivate: [SentinelAuthGuardWithLogin], // disable this line when uploading for demonstration
   },
   {
     path: '',
@@ -15,8 +16,8 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: Kypo2AuthProviderPickerComponent,
-    canActivate: [Kypo2NotAuthGuardService]
+    component: SentinelAuthProviderListComponent,
+    canActivate: [SentinelNegativeAuthGuard]
   },
   {
     path: '**',
@@ -25,8 +26,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes, { enableTracing: false })],
+  exports: [RouterModule],
 })
 export class AppRoutingModule {
 }
