@@ -46,6 +46,7 @@ mat-sidenav-content {
   margin-top: -6px;
   border-top: 0;
   padding-bottom: 20px;
+  margin-left: 10px;
 }
 
 .name-header, .graph-name-header {
@@ -60,7 +61,7 @@ mat-sidenav-content {
 }
 
 .graph-name-header h5, .name-header {
-  font-weight: 500;
+  font-weight: bolder;
   font-size: 15px !important;
 }
 
@@ -160,7 +161,7 @@ mat-sidenav-content {
   }
 
   div.vis.left {
-    width: 98% !important;
+    width: 96% !important;
   }
 
   .hurdling-content {
