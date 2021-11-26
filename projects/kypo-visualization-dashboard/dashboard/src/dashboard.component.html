@@ -1,17 +1,6 @@
 <mat-sidenav-container class="dashboard-container">
   <mat-sidenav-content>
     <mat-expansion-panel>
-      <!-- LEVEL TABS  -->
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          <b>Training Definition Summary</b>
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-      <div class="filter-content">
-        Level tabs component is here you just cant see it
-      </div>
-    </mat-expansion-panel>
-    <mat-expansion-panel>
       <!-- FILTERS SELECTION  -->
       <mat-expansion-panel-header>
         <mat-panel-title>
@@ -36,7 +25,7 @@
       </div>
     </mat-expansion-panel>
     <!-- TRAINEE SELECTION  -->
-    <div *ngIf="visualizationData$ | async">
+    <div class="player-selection" *ngIf="visualizationData$ | async">
       <kypo2-viz-hurdling-player-selection
         [visualizationData]="visualizationData$ | async"
         [selectedPlayerView]="selectedTraineeView"
@@ -105,20 +94,16 @@
       <div *ngIf="hasReferenceSolution" class="vis summary-container">
         <div class="graph-name-header">
           <h5>Trainees summary graph</h5>
-          <button mat-button color="primary" (click)="setReferenceGraph()">Show Reference Graph</button>
         </div>
         <div class="summary-content">
           <!-- SUMMARY GRAPH CONTENT  -->
-          <div *ngIf="!referenceGraphDisplayed else referenceGraph">
+          <div>
             <kypo-summary-graph [trainingInstanceId]="trainingInstanceId"></kypo-summary-graph>
           </div>
           <!-- SUMMARY & REFERENCE GRAPH CONTENT  -->
-          <ng-template #referenceGraph class="reference-content">
-            <kypo-summary-graph [trainingInstanceId]="trainingInstanceId"></kypo-summary-graph>
-            <div id="reference-graph">
-              <kypo-reference-graph [trainingInstanceId]="trainingInstanceId"></kypo-reference-graph>
-            </div>
-          </ng-template>
+          <div class="reference-content">
+            <kypo-reference-graph [trainingInstanceId]="trainingInstanceId"></kypo-reference-graph>
+          </div>
         </div>
       </div>
     </div>
