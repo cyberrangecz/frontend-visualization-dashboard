@@ -13,8 +13,7 @@ mat-sidenav-content {
 }
 
 .overview-container {
-  display: flex;
-  flex-direction: row;
+  display: inherit;
   width: 100%;
   justify-content: space-between;
 }
@@ -32,12 +31,10 @@ mat-sidenav-content {
 }
 
 .vis.left {
-  float: left;
   margin: 5px 0px 5px 10px;
 }
 
 .vis.right {
-  float: right;
   margin: 5px 10px 5px 0px;
 }
 
@@ -141,9 +138,10 @@ mat-sidenav-content {
   padding-top: 10px;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1550px) {
   .overview-container {
     display: flex;
+    float: none;
     flex-direction: column-reverse;
   }
   .overview-line.hidden {
