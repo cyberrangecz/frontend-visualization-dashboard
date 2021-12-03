@@ -62,11 +62,11 @@
                   (selectedTrainee)="highlightTraineeChange($event)"
           ></kypo2-viz-overview-clustering>
         </div>
-        <div class="vis right overflow overview-line {{!((filteredTrainees$ | async).length > 0) ?  'hidden' : ''}}"
+        <div class="vis right overflow overview-line {{!((lineTrainees$ | async).length > 0) ?  'hidden' : ''}}"
              [ngStyle]="{'justify-content': 'center'}">
           <div class="overview-visualization-container">
             <div class="name-header">Individual Walkthrough for
-              <span *ngFor="let traineeId of filteredTrainees$ | async">
+              <span *ngFor="let traineeId of lineTrainees$ | async">
                 <img *ngIf="selectedTraineeView === 'avatar' else noAvatar"
                      class="trainee-avatar"
                      src="data:image/png;base64,{{getTraineeAvatar(traineeId)}}"
@@ -82,7 +82,7 @@
                       [trainingDefinitionId]="trainingDefinitionId"
                       [standalone]="true"
                       [activeFilters]="activeFilters$ | async"
-                      [filterPlayers]="filteredTrainees$ | async"
+                      [filterPlayers]="lineTrainees$ | async"
                       [highlightedTrainee]="highlightedTrainee$ | async"
                       (selectedTrainee)="highlightTraineeChange($event)"
               ></kypo2-viz-overview-line>

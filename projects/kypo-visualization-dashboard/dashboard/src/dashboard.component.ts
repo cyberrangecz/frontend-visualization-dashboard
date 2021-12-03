@@ -20,9 +20,11 @@ export class DashboardComponent implements OnInit {
   @Input() trainingDefinitionId: number;
   @Input() hasReferenceSolution: boolean;
 
-  clusteringSize = { width: innerWidth * 0.36, height: 400 };
-  timelineSize = { width: innerWidth * 0.33, height: 400 };
-  innerWidth = document.documentElement.clientWidth - 40;
+  innerWidth = document.documentElement.clientWidth - 200;
+  clusteringSize =
+    innerWidth > 1550 ? { width: innerWidth * 0.36, height: 400 } : { width: innerWidth * 0.7, height: 400 };
+  timelineSize =
+    innerWidth > 1550 ? { width: innerWidth * 0.33, height: 400 } : { width: innerWidth * 0.7, height: 400 };
   selectedTraineeView: PlayerView = PlayerView.Avatar;
   referenceGraphDisplayed = false;
 
@@ -32,8 +34,14 @@ export class DashboardComponent implements OnInit {
   private filteredTraineesSubject$: BehaviorSubject<number[]> = new BehaviorSubject([]);
   filteredTrainees$: Observable<number[]> = this.filteredTraineesSubject$.asObservable();
 
+  private lineTraineesSubject$: BehaviorSubject<number[]> = new BehaviorSubject([]);
+  lineTrainees$: Observable<number[]> = this.lineTraineesSubject$.asObservable();
+
   private hurdlingTraineesSubject$: BehaviorSubject<Player[]> = new BehaviorSubject([]);
   hurdlingTrainees$: Observable<Player[]> = this.hurdlingTraineesSubject$.asObservable();
+
+  private hurdlingSelectedTraineesSubject$: BehaviorSubject<number[]> = new BehaviorSubject([]);
+  hurdlingSelectedTrainees$: Observable<number[]> = this.hurdlingSelectedTraineesSubject$.asObservable();
 
   private activeFiltersSubject$: BehaviorSubject<any[]> = new BehaviorSubject([]);
   activeFilters$: Observable<any[]> = this.activeFiltersSubject$.asObservable();
@@ -57,13 +65,13 @@ export class DashboardComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    this.innerWidth = document.documentElement.clientWidth - 40;
-    if (document.documentElement.clientWidth < 1200) {
-      this.clusteringSize.width = this.innerWidth * 0.8;
-      this.timelineSize.width = this.innerWidth * 0.8;
+    this.innerWidth = document.getElementsByClassName('dashboard-container')[0].getBoundingClientRect().width;
+    if (document.documentElement.clientWidth < 1545) {
+      this.clusteringSize.width = this.innerWidth * 0.7;
+      this.timelineSize.width = this.innerWidth * 0.7;
     } else {
       this.clusteringSize.width = this.innerWidth * 0.36;
-      this.timelineSize.width = this.innerWidth * 0.33;
+      this.timelineSize.width = this.innerWidth * 0.34;
     }
   }
 
@@ -94,7 +102,8 @@ export class DashboardComponent implements OnInit {
    * @param trainingRunIds array of training runs
    */
   selectedTraineesChange(trainingRunIds: number[]): void {
-    this.filteredTraineesSubject$.next(trainingRunIds);
+    this.hurdlingSelectedTraineesSubject$.next(trainingRunIds);
+    this.lineTraineesSubject$.next(trainingRunIds);
   }
 
   /**
@@ -110,7 +119,9 @@ export class DashboardComponent implements OnInit {
    * @param selectedTrainees selected trainees
    */
   traineeFilterChange(selectedTrainees: Player[]): void {
+    this.lineTraineesSubject$.next(this.updateLineTrainees(selectedTrainees));
     this.hurdlingTraineesSubject$.next(selectedTrainees);
+    this.filteredTraineesSubject$.next(selectedTrainees.map((trainee) => trainee.trainingRunId));
   }
 
   /**
@@ -125,10 +136,19 @@ export class DashboardComponent implements OnInit {
    * @param traineeId id of trainee
    */
   getTraineeAvatar(traineeId: number): string {
-    return this.hurdlingTraineesSubject$.getValue().find((player) => player.trainingRunId === traineeId).picture;
+    if (this.hurdlingTraineesSubject$.getValue().find((player) => player.trainingRunId === traineeId) !== undefined) {
+      return this.hurdlingTraineesSubject$.getValue().find((player) => player.trainingRunId === traineeId).picture;
+    } else {
+      return '';
+    }
   }
 
-  private loadData() {
+  private loadData(): void {
     this.visualizationDataService.getData(this.trainingInstanceId).pipe(take(1)).subscribe();
+  }
+
+  private updateLineTrainees(trainees: Player[]): number[] {
+    const gridSelected: number[] = trainees.map((trainee) => trainee.trainingRunId);
+    return this.hurdlingSelectedTraineesSubject$.getValue().filter((trainee) => gridSelected.indexOf(trainee) !== -1);
   }
 }
