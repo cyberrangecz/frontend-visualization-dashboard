@@ -1,3 +1,7 @@
+### 12.1.0 Fix problems with trainee selection, zoom reset and Walkthrough title.
+* 5c4f8066 -- [CI/CD] Update packages.json version based on GitLab tag.
+* 6bc062fe -- Merge branch '7-dashboard-improvements' into 'master'
+* 62a0f77d -- Resolve "dashboard improvements"
 ### 12.0.3 Responsivity problems, interactions between visualizations adjusted.
 * b173b08b -- [CI/CD] Update packages.json version based on GitLab tag.
 * 7ef6c13b -- Merge branch '6-adust-dashboard-according-to-release-testing' into 'master'
