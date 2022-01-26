@@ -62,17 +62,20 @@
                   (selectedTrainee)="highlightTraineeChange($event)"
           ></kypo2-viz-overview-clustering>
         </div>
-        <div class="vis right overflow overview-line {{!((lineTrainees$ | async).length > 0) ?  'hidden' : ''}}"
+        <div *ngIf="(lineTrainees$ | async) as lineTrainees"
+             class="vis right overflow overview-line {{!((lineTrainees).length > 0) ?  'hidden' : ''}}"
              [ngStyle]="{'justify-content': 'center'}">
           <div class="overview-visualization-container">
             <div class="name-header">Individual Walkthrough for
-              <span *ngFor="let traineeId of lineTrainees$ | async">
-                <img *ngIf="selectedTraineeView === 'avatar' else noAvatar"
-                     class="trainee-avatar"
-                     src="data:image/png;base64,{{getTraineeAvatar(traineeId)}}"
-                     width="18"/>
-                <ng-template #noAvatar>selected trainees</ng-template>
-              </span>
+              <div *ngIf="selectedTraineeView === 'avatar' else noAvatar">
+                <span *ngFor="let traineeId of lineTrainees">
+                  <img
+                    class="trainee-avatar"
+                    src="data:image/png;base64,{{getTraineeAvatar(traineeId)}}"
+                    width="18"/>
+                </span>
+              </div>
+              <ng-template #noAvatar>selected trainees</ng-template>
             </div>
             <!-- TIMELINE CONTENT  -->
             <div class="vis-timeline">
@@ -82,7 +85,7 @@
                       [trainingDefinitionId]="trainingDefinitionId"
                       [standalone]="true"
                       [activeFilters]="activeFilters$ | async"
-                      [filterPlayers]="lineTrainees$ | async"
+                      [filterPlayers]="lineTrainees"
                       [highlightedTrainee]="highlightedTrainee$ | async"
                       (selectedTrainee)="highlightTraineeChange($event)"
               ></kypo2-viz-overview-line>

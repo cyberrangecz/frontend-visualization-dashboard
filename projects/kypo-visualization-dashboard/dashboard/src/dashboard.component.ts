@@ -26,7 +26,6 @@ export class DashboardComponent implements OnInit {
   timelineSize =
     innerWidth > 1550 ? { width: innerWidth * 0.33, height: 400 } : { width: innerWidth * 0.7, height: 400 };
   selectedTraineeView: PlayerView = PlayerView.Avatar;
-  referenceGraphDisplayed = false;
 
   private highlightedTraineeSubject$: BehaviorSubject<number> = new BehaviorSubject(null);
   highlightedTrainee$: Observable<number> = this.highlightedTraineeSubject$.asObservable();
@@ -103,7 +102,7 @@ export class DashboardComponent implements OnInit {
    */
   selectedTraineesChange(trainingRunIds: number[]): void {
     this.hurdlingSelectedTraineesSubject$.next(trainingRunIds);
-    this.lineTraineesSubject$.next(trainingRunIds);
+    this.lineTraineesSubject$.next([...trainingRunIds]);
   }
 
   /**
@@ -122,13 +121,6 @@ export class DashboardComponent implements OnInit {
     this.lineTraineesSubject$.next(this.updateLineTrainees(selectedTrainees));
     this.hurdlingTraineesSubject$.next(selectedTrainees);
     this.filteredTraineesSubject$.next(selectedTrainees.map((trainee) => trainee.trainingRunId));
-  }
-
-  /**
-   * Sets state whether reference graph should be displayed
-   */
-  setReferenceGraph(): void {
-    this.referenceGraphDisplayed = !this.referenceGraphDisplayed;
   }
 
   /**

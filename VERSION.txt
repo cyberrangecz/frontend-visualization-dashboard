@@ -1,3 +1,4 @@
+12.1.0 Fix problems with trainee selection, zoom reset and Walkthrough title.
 12.0.3 Responsivity problems, interactions between visualizations adjusted.
 12.0.2 Fix style issues.
 12.0.1 Refactored visualization dashboard. Added Summary and Reference graph component for definitions with reference solutions.
