@@ -8,7 +8,7 @@ import { SentinelAuthGuardWithLogin, SentinelNegativeAuthGuard } from '@sentinel
 import { D3Service } from '@muni-kypo-crp/d3-service';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { SentinelLayout1Module } from '@sentinel/layout';
+import { SentinelLayout1Module } from '@sentinel/layout/layout1';
 
 @NgModule({
   declarations: [AppComponent],
