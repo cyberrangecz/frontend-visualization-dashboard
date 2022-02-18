@@ -2,13 +2,6 @@
   "$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../../dist/kypo-visualization-dashboard",
   "lib": {
-    "entryFile": "src/public_api.ts",
-    "umdModuleIds": {
-      "@muni-kypo-crp/d3-service": "@muni-kypo-crp.d3-service",
-      "@muni-kypo-crp/overview-visualization": "@muni-kypo-crp.overview-visualization",
-      "@muni-kypo-crp/hurdling-visualization": "@muni-kypo-crp.hurdling-visualization",
-      "@muni-kypo-crp/command-visualizations/summary-graph": "@muni-kypo-crp.command-visualizations-summary-graph",
-      "@muni-kypo-crp/command-visualizations/reference-graph": "@muni-kypo-crp.command-visualizations.reference-graph"
-    }
+    "entryFile": "src/public_api.ts"
   }
 }
