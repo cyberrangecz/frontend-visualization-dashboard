@@ -1,3 +1,7 @@
+### 13.0.0 Update to Angular 13, CI/CD update.
+* c1621b84 -- [CI/CD] Update packages.json version based on GitLab tag.
+* f1cb6101 -- Merge branch '8-update-to-angular-13' into 'master'
+* 7111e447 -- Resolve "Update to Angular 13"
 ### 12.1.0 Fix problems with trainee selection, zoom reset and Walkthrough title.
 * 5c4f8066 -- [CI/CD] Update packages.json version based on GitLab tag.
 * 6bc062fe -- Merge branch '7-dashboard-improvements' into 'master'
