@@ -1,3 +1,7 @@
+### 13.0.1 Fix problems with timeline in clustering and line visualizations.
+* 2a61ce54 -- [CI/CD] Update packages.json version based on GitLab tag.
+* aa5429a0 -- Merge branch '9-bump-dashboard-visualizations' into 'master'
+* cd01d18b -- Resolve "Bump dashboard visualizations"
 ### 13.0.0 Update to Angular 13, CI/CD update.
 * c1621b84 -- [CI/CD] Update packages.json version based on GitLab tag.
 * f1cb6101 -- Merge branch '8-update-to-angular-13' into 'master'
