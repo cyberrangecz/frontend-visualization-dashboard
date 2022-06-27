@@ -1,3 +1,7 @@
+### 14.0.0 Update to Angular 14.
+* 35c4f847 -- [CI/CD] Update packages.json version based on GitLab tag.
+* e8a4c9b6 -- Merge branch '10-update-to-angular-14' into 'master'
+* 88d4a594 -- Resolve "Update to Angular 14"
 ### 13.0.1 Fix problems with timeline in clustering and line visualizations.
 * 2a61ce54 -- [CI/CD] Update packages.json version based on GitLab tag.
 * aa5429a0 -- Merge branch '9-bump-dashboard-visualizations' into 'master'
