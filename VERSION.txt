@@ -1,3 +1,4 @@
+14.0.0 Update to Angular 14.
 13.0.1 Fix problems with timeline in clustering and line visualizations.
 13.0.0 Update to Angular 13, CI/CD update.
 12.1.0 Fix problems with trainee selection, zoom reset and Walkthrough title.

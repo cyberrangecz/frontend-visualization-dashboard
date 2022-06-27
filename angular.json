@@ -141,17 +141,17 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig": "src/karma.conf.js",
+            "main": "projects/kypo-visualization-dashboard-example/src/test.ts",
+            "polyfills": "projects/kypo-visualization-dashboard-example/src/polyfills.ts",
+            "tsConfig": "projects/kypo-visualization-dashboard-example/tsconfig.spec.json",
+            "karmaConfig": "projects/kypo-visualization-dashboard-example/karma.conf.js",
             "styles": [
-              "src/styles.css"
+              "projects/kypo-visualization-dashboard-example/src/styles.css"
             ],
             "scripts": [],
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "projects/kypo-visualization-dashboard-example/src/favicon.ico",
+              "projects/kypo-visualization-dashboard-example/src/assets"
             ]
           }
         },
@@ -166,6 +166,5 @@
         }
       }
     }
-  },
-  "defaultProject": "kypo-visualization-dashboard"
+  }
 }
