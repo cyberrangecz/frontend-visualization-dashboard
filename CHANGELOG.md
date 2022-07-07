@@ -1,3 +1,6 @@
+### 14.0.1 Rename kypo2 to kypo.
+* 7d4bfe2f -- [CI/CD] Update packages.json version based on GitLab tag.
+* eb5f8b21 -- Rename kypo2 to kypo
 ### 14.0.0 Update to Angular 14.
 * 35c4f847 -- [CI/CD] Update packages.json version based on GitLab tag.
 * e8a4c9b6 -- Merge branch '10-update-to-angular-14' into 'master'
