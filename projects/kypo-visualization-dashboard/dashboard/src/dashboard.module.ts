@@ -35,7 +35,6 @@ export class DashboardModule {
   static forRoot(config: VisualizationDashboardConfig): ModuleWithProviders<DashboardModule> {
     const visualizationConfig = {
       trainingServiceUrl: config.trainingBasePath,
-      elasticSearchServiceUrl: config.elasticSearchBasePath,
     };
     return {
       ngModule: DashboardModule,
