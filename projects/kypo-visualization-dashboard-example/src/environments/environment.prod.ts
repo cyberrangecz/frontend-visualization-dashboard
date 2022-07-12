@@ -18,7 +18,6 @@ export const environment = {
   sessionChecksEnabled: false,
   dashboardVisualizationConfig: {
     trainingBasePath: 'https://172.19.0.22/kypo-rest-training/api/v1/',
-    elasticSearchBasePath: 'https://172.19.0.22/kypo-elasticsearch-service/api/v1/',
   },
   authConfig: {
     guardMainPageRedirect: 'visualizations',
