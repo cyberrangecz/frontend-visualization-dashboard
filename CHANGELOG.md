@@ -1,3 +1,7 @@
+### 14.1.0 Remove elastic search service url.
+* 41f13c3f -- [CI/CD] Update packages.json version based on GitLab tag.
+* bd85829d -- Merge branch '12-remove-elastic-search-service-from-configs' into 'master'
+* 6d9f9045 -- Resolve "Remove elastic search service from configs"
 ### 14.0.1 Rename kypo2 to kypo.
 * 7d4bfe2f -- [CI/CD] Update packages.json version based on GitLab tag.
 * eb5f8b21 -- Rename kypo2 to kypo
