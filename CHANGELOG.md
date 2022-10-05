@@ -1,3 +1,7 @@
+### 14.2.0 Bump hurdling visualization and address changes in inputs.
+* c2bb1da3 -- [CI/CD] Update packages.json version based on GitLab tag.
+* 05aef64d -- Merge branch '13-address-changes-in-hurdling-visualization' into 'master'
+* 581a38be -- Resolve "Address changes in hurdling visualization"
 ### 14.1.0 Remove elastic search service url.
 * 41f13c3f -- [CI/CD] Update packages.json version based on GitLab tag.
 * bd85829d -- Merge branch '12-remove-elastic-search-service-from-configs' into 'master'
