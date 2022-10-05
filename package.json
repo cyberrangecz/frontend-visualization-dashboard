@@ -33,7 +33,7 @@
     "@angular/router": "^14.0.5",
     "@muni-kypo-crp/command-visualizations": "~14.1.0",
     "@muni-kypo-crp/d3-service": "^14.0.0",
-    "@muni-kypo-crp/hurdling-visualization": "~14.1.0",
+    "@muni-kypo-crp/hurdling-visualization": "~14.2.0",
     "@muni-kypo-crp/overview-visualization": "~14.1.0",
     "@sentinel/auth": "~14.0.0",
     "@sentinel/common": "~14.0.1",

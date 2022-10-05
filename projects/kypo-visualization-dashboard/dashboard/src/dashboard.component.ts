@@ -1,8 +1,8 @@
 import { ChangeDetectorRef, Component, HostListener, Input, OnInit } from '@angular/core';
 import { take } from 'rxjs/operators';
 import {
-  Player,
-  PlayerView,
+  Trainee,
+  TraineeView,
   VisualizationData,
   VisualizationsDataService,
 } from '@muni-kypo-crp/hurdling-visualization';
@@ -25,7 +25,7 @@ export class DashboardComponent implements OnInit {
     innerWidth > 1550 ? { width: innerWidth * 0.36, height: 400 } : { width: innerWidth * 0.7, height: 400 };
   timelineSize =
     innerWidth > 1550 ? { width: innerWidth * 0.33, height: 400 } : { width: innerWidth * 0.7, height: 400 };
-  selectedTraineeView: PlayerView = PlayerView.Avatar;
+  selectedTraineeView: TraineeView = TraineeView.Avatar;
 
   private highlightedTraineeSubject$: BehaviorSubject<number> = new BehaviorSubject(null);
   highlightedTrainee$: Observable<number> = this.highlightedTraineeSubject$.asObservable();
@@ -36,8 +36,8 @@ export class DashboardComponent implements OnInit {
   private lineTraineesSubject$: BehaviorSubject<number[]> = new BehaviorSubject([]);
   lineTrainees$: Observable<number[]> = this.lineTraineesSubject$.asObservable();
 
-  private hurdlingTraineesSubject$: BehaviorSubject<Player[]> = new BehaviorSubject([]);
-  hurdlingTrainees$: Observable<Player[]> = this.hurdlingTraineesSubject$.asObservable();
+  private hurdlingTraineesSubject$: BehaviorSubject<Trainee[]> = new BehaviorSubject([]);
+  hurdlingTrainees$: Observable<Trainee[]> = this.hurdlingTraineesSubject$.asObservable();
 
   private hurdlingSelectedTraineesSubject$: BehaviorSubject<number[]> = new BehaviorSubject([]);
   hurdlingSelectedTrainees$: Observable<number[]> = this.hurdlingSelectedTraineesSubject$.asObservable();
@@ -80,11 +80,11 @@ export class DashboardComponent implements OnInit {
    */
   togglePlayerView(view: MatSelectChange): void {
     if (view.value === 'name') {
-      this.selectedTraineeView = PlayerView.Name;
+      this.selectedTraineeView = TraineeView.Name;
     } else if (view.value === 'both') {
-      this.selectedTraineeView = PlayerView.Both;
+      this.selectedTraineeView = TraineeView.Both;
     } else {
-      this.selectedTraineeView = PlayerView.Avatar;
+      this.selectedTraineeView = TraineeView.Avatar;
     }
   }
 
@@ -117,7 +117,7 @@ export class DashboardComponent implements OnInit {
    * Updates subject of currently selected trainees from event emitted by hurdling player selection component
    * @param selectedTrainees selected trainees
    */
-  traineeFilterChange(selectedTrainees: Player[]): void {
+  traineeFilterChange(selectedTrainees: Trainee[]): void {
     this.lineTraineesSubject$.next(this.updateLineTrainees(selectedTrainees));
     this.hurdlingTraineesSubject$.next(selectedTrainees);
     this.filteredTraineesSubject$.next(selectedTrainees.map((trainee) => trainee.trainingRunId));
@@ -139,7 +139,7 @@ export class DashboardComponent implements OnInit {
     this.visualizationDataService.getData(this.trainingInstanceId).pipe(take(1)).subscribe();
   }
 
-  private updateLineTrainees(trainees: Player[]): number[] {
+  private updateLineTrainees(trainees: Trainee[]): number[] {
     const gridSelected: number[] = trainees.map((trainee) => trainee.trainingRunId);
     return this.hurdlingSelectedTraineesSubject$.getValue().filter((trainee) => gridSelected.indexOf(trainee) !== -1);
   }

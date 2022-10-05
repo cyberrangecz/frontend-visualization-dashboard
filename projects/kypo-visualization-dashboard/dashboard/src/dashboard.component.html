@@ -25,12 +25,12 @@
       </div>
     </mat-expansion-panel>
     <!-- TRAINEE SELECTION  -->
-    <div class="player-selection" *ngIf="visualizationData$ | async">
-      <kypo-viz-hurdling-player-selection
+    <div class="trainee-selection" *ngIf="visualizationData$ | async">
+      <kypo-viz-hurdling-trainee-selection
         [visualizationData]="visualizationData$ | async"
-        [selectedPlayerView]="selectedTraineeView"
-        (filteredPlayersChange)="traineeFilterChange($event)">
-      </kypo-viz-hurdling-player-selection>
+        [selectedTraineeView]="selectedTraineeView"
+        (filteredTraineesChange)="traineeFilterChange($event)">
+      </kypo-viz-hurdling-trainee-selection>
     </div>
 
     <!-- DASHBOARD CONTENT  -->
@@ -39,11 +39,11 @@
       <div class="vis hurdling-content" style="display: block; justify-content: center;">
         <div *ngIf="visualizationData$ | async" class="name-header">Training Overview</div>
         <kypo-hurdling-visualization
-                (highlightedPlayer)="highlightTraineeChange($event)"
-                (outputSelectedPlayers)="selectedTraineesChange($event)"
+                (highlightedTrainee)="highlightTraineeChange($event)"
+                (outputSelectedTrainees)="selectedTraineesChange($event)"
                 [setDashboardView]=true
                 [isStandalone]="true"
-                [selectedPlayerView]="selectedTraineeView"
+                [selectedTraineeView]="selectedTraineeView"
                 [trainingInstanceId]="trainingInstanceId"
                 [selectedTrainees]="hurdlingTrainees$ | async"
         ></kypo-hurdling-visualization>
