@@ -1,3 +1,4 @@
+14.3.0 Bump clustering visualization to address changes in max achievable score.
 14.2.0 Bump hurdling visualization and address changes in inputs.
 14.1.0 Remove elastic search service url.
 14.0.1 Rename kypo2 to kypo.
