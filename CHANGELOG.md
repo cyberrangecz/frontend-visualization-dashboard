@@ -1,3 +1,7 @@
+### 14.3.0 Bump clustering visualization to address changes in max achievable score.
+* de275e80 -- [CI/CD] Update packages.json version based on GitLab tag.
+* dcf2d2a3 -- Merge branch 'bump-overview-visualization-to-latest' into 'master'
+* ecf161aa -- Bump overview
 ### 14.2.0 Bump hurdling visualization and address changes in inputs.
 * c2bb1da3 -- [CI/CD] Update packages.json version based on GitLab tag.
 * 05aef64d -- Merge branch '13-address-changes-in-hurdling-visualization' into 'master'
