@@ -1,3 +1,12 @@
+### 15.0.0 Update to Angular 15.
+* d61b100 -- [CI/CD] Update packages.json version based on GitLab tag.
+*   306e57c -- Merge branch '14-update-to-angular-15' into 'master'
+|\  
+| * 33aa50a -- Update with new Angular 15 libraries
+| * d0be953 -- Merge branch '396296-master-patch-15877' into 'master'
+* | 36b1ded -- Merge branch '396296-master-patch-15877' into 'master'
+|/  
+* 3db366a -- Update README.md
 ### 14.3.0 Bump clustering visualization to address changes in max achievable score.
 * de275e80 -- [CI/CD] Update packages.json version based on GitLab tag.
 * dcf2d2a3 -- Merge branch 'bump-overview-visualization-to-latest' into 'master'
