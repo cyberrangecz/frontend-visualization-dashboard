@@ -7,13 +7,9 @@ import { SummaryGraphModule } from '@muni-kypo-crp/command-visualizations/summar
 import { ReferenceGraphModule } from '@muni-kypo-crp/command-visualizations/reference-graph';
 import { DashboardMaterialModule } from './dashboard-material.module';
 import { VisualizationDashboardConfig } from '@muni-kypo-crp/visualization-dashboard/internal';
-// import {LevelTabsComponent} from "./components/level-tabs/level-tabs.component";
 
 @NgModule({
-  declarations: [
-    DashboardComponent,
-    // LevelTabsComponent
-  ],
+  declarations: [DashboardComponent],
   imports: [
     CommonModule,
     KypoTrainingsVisualizationOverviewLibModule,
@@ -32,7 +28,7 @@ export class DashboardModule {
     }
   }
 
-  static forRoot(config: VisualizationDashboardConfig): ModuleWithProviders<DashboardModule> {
+  static forRoot(config): ModuleWithProviders<DashboardModule> {
     const visualizationConfig = {
       trainingServiceUrl: config.trainingBasePath,
     };

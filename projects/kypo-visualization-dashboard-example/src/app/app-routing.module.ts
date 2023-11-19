@@ -7,18 +7,18 @@ const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren: () => import('./dashboard/dashboard-page.module').then((m) => m.DashboardPageModule),
-    // canActivate: [SentinelAuthGuardWithLogin],
+    canActivate: [SentinelAuthGuardWithLogin],
   },
   {
     path: '',
     redirectTo: 'dashboard',
     pathMatch: 'full',
   },
-  // {
-  //   path: 'login',
-  //   component: SentinelAuthProviderListComponent,
-  //   canActivate: [SentinelNegativeAuthGuard],
-  // },
+  {
+    path: 'login',
+    component: SentinelAuthProviderListComponent,
+    canActivate: [SentinelNegativeAuthGuard],
+  },
   {
     path: '**',
     redirectTo: 'dashboard',

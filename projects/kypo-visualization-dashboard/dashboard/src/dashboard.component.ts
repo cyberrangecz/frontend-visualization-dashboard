@@ -63,7 +63,7 @@ export class DashboardComponent implements OnInit {
   }
 
   @HostListener('window:resize', ['$event'])
-  onResize(event) {
+  onResize() {
     this.innerWidth = document.getElementsByClassName('dashboard-container')[0].getBoundingClientRect().width;
     if (document.documentElement.clientWidth < 1545) {
       this.clusteringSize.width = this.innerWidth * 0.7;

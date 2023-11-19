@@ -6,7 +6,7 @@ This visualization dashboard unites several visualizations and provides interact
 
 1.  Run `npm install`.
 2.  Install json-server `npm install -g json-server`.
-3.  Run the server with provided parameters `json-server -w ./utils/json-server/db.js --routes ./utils/json-server/routes.json --middlewares ./utils/json-server/server.js`.
+3.  Run the server with provided parameters via  `npm run api`.
 4.  Run the app in local environment and ssl `ng serve --configuration local --ssl`
 5.  Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
