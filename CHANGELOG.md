@@ -1,3 +1,8 @@
+### 16.0.0 Update to Angular 16 and update local issuer to keycloak.
+* cb47a46 -- [CI/CD] Update packages.json version based on GitLab tag.
+* e51c4d3 -- Merge branch '15-update-to-angular-16' into 'master'
+* fa2d278 -- Update local issuer to keycloak
+* 594e0d7 -- Update to Angular 16
 ### 15.0.0 Update to Angular 15.
 * d61b100 -- [CI/CD] Update packages.json version based on GitLab tag.
 *   306e57c -- Merge branch '14-update-to-angular-15' into 'master'
