@@ -1,3 +1,10 @@
+### 16.0.1 Update sentinel versions.
+* cd3cdc5 -- [CI/CD] Update packages.json version based on GitLab tag.
+*   da5b6a9 -- Merge branch 'update-sentinel-versions' into 'master'
+|\  
+| * 826eed7 -- Update sentinel versions
+|/  
+* c0fc9bf -- [CI/CD] CHANGELOG.md file updated with commits between the current and previous tag.
 ### 16.0.0 Update to Angular 16 and update local issuer to keycloak.
 * cb47a46 -- [CI/CD] Update packages.json version based on GitLab tag.
 * e51c4d3 -- Merge branch '15-update-to-angular-16' into 'master'
