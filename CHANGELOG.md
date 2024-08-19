@@ -1,3 +1,7 @@
+### 16.0.2 Update visualization versions.
+* 10f12b6 -- [CI/CD] Update packages.json version based on GitLab tag.
+* e476bca -- Merge branch 'update-visualization-versions' into 'master'
+* 610e49a -- update visualization versions
 ### 16.0.1 Update sentinel versions.
 * cd3cdc5 -- [CI/CD] Update packages.json version based on GitLab tag.
 *   da5b6a9 -- Merge branch 'update-sentinel-versions' into 'master'
