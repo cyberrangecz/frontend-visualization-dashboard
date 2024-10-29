@@ -2,21 +2,22 @@
 // `ng build --configuration local` replaces `environment.ts` with `environment.local.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-const BASE_URL = 'https://172.19.0.22';
+const API_URL = 'http://localhost:3000';
+const AUTH_URL = 'https://172.19.0.22';
 const HOME_URL = 'https://localhost:4200';
 
 export const environment = {
   production: false,
   sessionChecksEnabled: false,
   dashboardVisualizationConfig: {
-    trainingBasePath: BASE_URL + '/kypo-rest-training/api/v1/',
+    trainingBasePath: API_URL + '/kypo-rest-training/api/v1/',
   },
   authConfig: {
     guardMainPageRedirect: 'visualization',
     guardLoginPageRedirect: 'login',
-    interceptorAllowedUrls: [BASE_URL, 'https://localhost'],
+    interceptorAllowedUrls: [API_URL, AUTH_URL, 'https://localhost'],
     authorizationStrategyConfig: {
-      authorizationUrl: BASE_URL + '/kypo-rest-user-and-group/api/v1/users/info',
+      authorizationUrl: AUTH_URL + '/kypo-rest-user-and-group/api/v1/users/info',
     },
     providers: [
       {
@@ -25,12 +26,12 @@ export const environment = {
         backgroundColor: '#002776',
         oidcConfig: {
           requireHttps: true,
-          issuer: BASE_URL + '/keycloak/realms/KYPO',
+          issuer: AUTH_URL + '/keycloak/realms/KYPO',
           clientId: 'KYPO-client',
           redirectUri: HOME_URL,
           scope: 'openid email profile offline_access',
-          logoutUrl: BASE_URL + '/keycloak/realms/KYPO/protocol/openid-connect/logout',
-          silentRefreshRedirectUri: BASE_URL + '/silent-refresh.html',
+          logoutUrl: AUTH_URL + '/keycloak/realms/KYPO/protocol/openid-connect/logout',
+          silentRefreshRedirectUri: AUTH_URL + '/silent-refresh.html',
           postLogoutRedirectUri: HOME_URL + '/logout-confirmed',
           clearHashAfterLogin: true,
         },
