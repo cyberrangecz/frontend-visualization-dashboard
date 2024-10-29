@@ -121,21 +121,21 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "kypo-visualization-dashboard-example:build"
+            "buildTarget": "kypo-visualization-dashboard-example:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "kypo-visualization-dashboard-example:build:production"
+              "buildTarget": "kypo-visualization-dashboard-example:build:production"
             },
             "local": {
-              "browserTarget": "kypo-visualization-dashboard-example:build:local"
+              "buildTarget": "kypo-visualization-dashboard-example:build:local"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "kypo-visualization-dashboard-example:build"
+            "buildTarget": "kypo-visualization-dashboard-example:build"
           }
         },
         "test": {

@@ -52,7 +52,7 @@ export class DashboardComponent implements OnInit {
   constructor(
     private visualizationDataService: VisualizationsDataService,
     private ref: ChangeDetectorRef,
-    d3service: D3Service
+    d3service: D3Service,
   ) {
     this.d3 = d3service.getD3();
   }
