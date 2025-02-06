@@ -1,21 +1,25 @@
 {
-  "extends": "../../tsconfig.json",
-  "compilerOptions": {
-    "outDir": "../../out-tsc/spec",
-    "types": [
-      "jasmine",
-      "node"
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "outDir": "../../out-tsc/spec",
+        "types": [
+            "jasmine",
+            "node"
+        ],
+        "paths": {
+            "@cyberrangecz-platform/visualization-dashboard": [
+                "./src/public_api.ts"
+            ],
+            "@cyberrangecz-platform/visualization-dashboard/*": [
+                "../*/src/public_api.ts"
+            ]
+        }
+    },
+    "files": [
+        "test.ts"
     ],
-    "paths": {
-      "@muni-kypo-crp/visualization-dashboard": ["./src/public_api.ts"],
-      "@muni-kypo-crp/visualization-dashboard/*": ["../*/src/public_api.ts"]
-    }
-  },
-  "files": [
-    "test.ts"
-  ],
-  "include": [
-    "**/*.spec.ts",
-    "**/*.d.ts"
-  ]
+    "include": [
+        "**/*.spec.ts",
+        "**/*.d.ts"
+    ]
 }

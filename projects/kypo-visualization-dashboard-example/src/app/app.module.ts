@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment';
 import { SentinelAuthModule } from '@sentinel/auth';
 import { SentinelAuthGuardWithLogin, SentinelNegativeAuthGuard } from '@sentinel/auth/guards';
-import { D3Service } from '@muni-kypo-crp/d3-service';
+import { D3Service } from '@cyberrangecz-platform/d3-service';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { SentinelLayout1Module } from '@sentinel/layout/layout1';

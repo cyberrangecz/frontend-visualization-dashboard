@@ -1,15 +1,19 @@
 {
-  "extends": "../../tsconfig.json",
-  "compilerOptions": {
-    "outDir": "../out-tsc/app",
-    "types": [],
-    "paths": {
-      "@muni-kypo-crp/visualization-dashboard": ["../kypo-visualization-dashboard/src/public_api.ts"],
-      "@muni-kypo-crp/visualization-dashboard/*": ["../kypo-visualization-dashboard/*/src/public_api.ts"]
-    }
-  },
-  "files": [
-    "src/main.ts",
-    "src/polyfills.ts"
-  ]
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "outDir": "../out-tsc/app",
+        "types": [],
+        "paths": {
+            "@cyberrangecz-platform/visualization-dashboard": [
+                "../kypo-visualization-dashboard/src/public_api.ts"
+            ],
+            "@cyberrangecz-platform/visualization-dashboard/*": [
+                "../kypo-visualization-dashboard/*/src/public_api.ts"
+            ]
+        }
+    },
+    "files": [
+        "src/main.ts",
+        "src/polyfills.ts"
+    ]
 }

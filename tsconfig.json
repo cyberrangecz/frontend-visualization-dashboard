@@ -1,28 +1,31 @@
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "baseUrl": "./projects/kypo-visualization-dashboard",
-    "outDir": "./dist/out-tsc",
-    "sourceMap": true,
-    "declaration": false,
-    "downlevelIteration": true,
-    "experimentalDecorators": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "importHelpers": true,
-    "target": "ES2022",
-    "lib": [
-      "es2020",
-      "dom"
-    ],
-    "paths": {
-      "@muni-kypo-crp/visualization-dashboard/dashboard": ["./dashboard/src/public_api.ts"],
-      "@muni-kypo-crp/visualization-dashboard/internal": ["./internal/src/public_api.ts"]
-
+    "compileOnSave": false,
+    "compilerOptions": {
+        "baseUrl": "./projects/kypo-visualization-dashboard",
+        "outDir": "./dist/out-tsc",
+        "sourceMap": true,
+        "declaration": false,
+        "downlevelIteration": true,
+        "experimentalDecorators": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "importHelpers": true,
+        "target": "ES2022",
+        "lib": [
+            "es2020",
+            "dom"
+        ],
+        "paths": {
+            "@cyberrangecz-platform/visualization-dashboard/dashboard": [
+                "./dashboard/src/public_api.ts"
+            ],
+            "@cyberrangecz-platform/visualization-dashboard/internal": [
+                "./internal/src/public_api.ts"
+            ]
+        }
+    },
+    "angularCompilerOptions": {
+        "fullTemplateTypeCheck": true,
+        "strictInjectionParameters": true
     }
-  },
-  "angularCompilerOptions": {
-    "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
-  }
 }

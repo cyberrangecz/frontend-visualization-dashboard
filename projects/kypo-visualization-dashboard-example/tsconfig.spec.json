@@ -1,23 +1,27 @@
 {
-  "extends": "../../tsconfig.json",
-  "compilerOptions": {
-    "outDir": "../out-tsc/spec",
-    "baseUrl": "./",
-    "types": [
-      "jasmine",
-      "node"
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "outDir": "../out-tsc/spec",
+        "baseUrl": "./",
+        "types": [
+            "jasmine",
+            "node"
+        ],
+        "paths": {
+            "@cyberrangecz-platform/visualization-dashboard": [
+                "../kypo-visualization-dashboard/src/public_api.ts"
+            ],
+            "@cyberrangecz-platform/visualization-dashboard/*": [
+                "../kypo-visualization-dashboard/*/src/public_api.ts"
+            ]
+        }
+    },
+    "files": [
+        "src/test.ts",
+        "src/polyfills.ts"
     ],
-    "paths": {
-      "@muni-kypo-crp/visualization-dashboard": ["../kypo-visualization-dashboard/src/public_api.ts"],
-      "@muni-kypo-crp/visualization-dashboard/*": ["../kypo-visualization-dashboard/*/src/public_api.ts"]
-    }
-  },
-  "files": [
-    "src/test.ts",
-    "src/polyfills.ts"
-  ],
-  "include": [
-    "**/*.spec.ts",
-    "**/*.d.ts"
-  ]
+    "include": [
+        "**/*.spec.ts",
+        "**/*.d.ts"
+    ]
 }

@@ -1,10 +1,10 @@
 import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
 import { DashboardComponent } from './dashboard.component';
-import { KypoTrainingsVisualizationOverviewLibModule } from '@muni-kypo-crp/overview-visualization';
+import { KypoTrainingsVisualizationOverviewLibModule } from '@cyberrangecz-platform/overview-visualization';
 import { CommonModule } from '@angular/common';
-import { KypoTrainingsHurdlingVizLibModule } from '@muni-kypo-crp/hurdling-visualization';
+import { KypoTrainingsHurdlingVizLibModule } from '@cyberrangecz-platform/hurdling-visualization';
 import { DashboardMaterialModule } from './dashboard-material.module';
-import { VisualizationDashboardConfig } from '@muni-kypo-crp/visualization-dashboard/internal';
+import { VisualizationDashboardConfig } from '@cyberrangecz-platform/visualization-dashboard/internal';
 
 @NgModule({
   declarations: [DashboardComponent],

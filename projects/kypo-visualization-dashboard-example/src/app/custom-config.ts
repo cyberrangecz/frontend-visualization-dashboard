@@ -1,8 +1,8 @@
 // import {environment} from '../environments/environment';
-// import {HurdlingVisualizationConfig} from '@muni-kypo-crp/hurdling-visualization';
-// import {VisualizationOverviewConfig as OverviewVisualizationConfig} from '@muni-kypo-crp/overview-visualization';
-// import {CommandVisualizationConfig} from "@muni-kypo-crp/command-visualizations/internal";
-// import {VisualizationDashboardConfig} from "@muni-kypo-crp/visualization-dashboard/internal";
+// import {HurdlingVisualizationConfig} from '@cyberrangecz-platform/hurdling-visualization';
+// import {VisualizationOverviewConfig as OverviewVisualizationConfig} from '@cyberrangecz-platform/overview-visualization';
+// import {CommandVisualizationConfig} from "@cyberrangecz-platform/command-visualizations/internal";
+// import {VisualizationDashboardConfig} from "@cyberrangecz-platform/visualization-dashboard/internal";
 //
 // export const CustomConfig: VisualizationDashboardConfig = {
 //   trainingBasePath: environment.trainingServiceUrl,

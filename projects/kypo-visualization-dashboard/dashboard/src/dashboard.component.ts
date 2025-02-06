@@ -5,8 +5,8 @@ import {
   TraineeView,
   VisualizationData,
   VisualizationsDataService,
-} from '@muni-kypo-crp/hurdling-visualization';
-import { D3, D3Service } from '@muni-kypo-crp/d3-service';
+} from '@cyberrangecz-platform/hurdling-visualization';
+import { D3, D3Service } from '@cyberrangecz-platform/d3-service';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { MatSelectChange } from '@angular/material/select';
 
