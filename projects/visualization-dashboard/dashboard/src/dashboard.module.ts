@@ -1,8 +1,8 @@
 import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
 import { DashboardComponent } from './dashboard.component';
-import { KypoTrainingsVisualizationOverviewLibModule } from '@cyberrangecz-platform/overview-visualization';
+import { TrainingsVisualizationOverviewLibModule } from '@cyberrangecz-platform/overview-visualization';
 import { CommonModule } from '@angular/common';
-import { KypoTrainingsHurdlingVizLibModule } from '@cyberrangecz-platform/hurdling-visualization';
+import { TrainingsHurdlingVizLibModule } from '@cyberrangecz-platform/hurdling-visualization';
 import { DashboardMaterialModule } from './dashboard-material.module';
 import { VisualizationDashboardConfig } from '@cyberrangecz-platform/visualization-dashboard/internal';
 
@@ -10,8 +10,8 @@ import { VisualizationDashboardConfig } from '@cyberrangecz-platform/visualizati
   declarations: [DashboardComponent],
   imports: [
     CommonModule,
-    KypoTrainingsVisualizationOverviewLibModule,
-    KypoTrainingsHurdlingVizLibModule,
+    TrainingsVisualizationOverviewLibModule,
+    TrainingsHurdlingVizLibModule,
     DashboardMaterialModule,
   ],
   exports: [DashboardComponent],
@@ -31,8 +31,8 @@ export class DashboardModule {
     return {
       ngModule: DashboardModule,
       providers: [
-        KypoTrainingsVisualizationOverviewLibModule.forRoot(visualizationConfig).providers,
-        KypoTrainingsHurdlingVizLibModule.forRoot(visualizationConfig).providers,
+        TrainingsVisualizationOverviewLibModule.forRoot(visualizationConfig).providers,
+        TrainingsHurdlingVizLibModule.forRoot(visualizationConfig).providers,
         {
           provide: VisualizationDashboardConfig,
           useValue: config,

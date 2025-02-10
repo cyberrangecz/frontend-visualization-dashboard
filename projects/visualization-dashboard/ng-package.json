@@ -1,6 +1,6 @@
 {
     "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-    "dest": "../../dist/kypo-visualization-dashboard",
+    "dest": "../../dist/visualization-dashboard",
     "lib": {
         "entryFile": "src/public_api.ts"
     }

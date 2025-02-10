@@ -3,21 +3,21 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "kypo-visualization-dashboard": {
+        "visualization-dashboard": {
             "projectType": "library",
-            "root": "projects/kypo-visualization-dashboard",
-            "sourceRoot": "projects/kypo-visualization-dashboard/src",
-            "prefix": "kypo",
+            "root": "projects/visualization-dashboard",
+            "sourceRoot": "projects/visualization-dashboard/src",
+            "prefix": "crczp",
             "architect": {
                 "build": {
                     "builder": "@angular-devkit/build-angular:ng-packagr",
                     "options": {
-                        "tsConfig": "projects/kypo-visualization-dashboard/tsconfig.lib.json",
-                        "project": "projects/kypo-visualization-dashboard/ng-package.json"
+                        "tsConfig": "projects/visualization-dashboard/tsconfig.lib.json",
+                        "project": "projects/visualization-dashboard/ng-package.json"
                     },
                     "configurations": {
                         "production": {
-                            "tsConfig": "projects/kypo-visualization-dashboard/tsconfig.lib.prod.json"
+                            "tsConfig": "projects/visualization-dashboard/tsconfig.lib.prod.json"
                         },
                         "development": {}
                     },
@@ -26,49 +26,49 @@
                 "test": {
                     "builder": "@angular-devkit/build-angular:karma",
                     "options": {
-                        "main": "projects/kypo-visualization-dashboard/src/test.ts",
-                        "tsConfig": "projects/kypo-visualization-dashboard/tsconfig.spec.json",
-                        "karmaConfig": "projects/kypo-visualization-dashboard/karma.conf.js"
+                        "main": "projects/visualization-dashboard/src/test.ts",
+                        "tsConfig": "projects/visualization-dashboard/tsconfig.spec.json",
+                        "karmaConfig": "projects/visualization-dashboard/karma.conf.js"
                     }
                 },
                 "lint": {
                     "builder": "@angular-eslint/builder:lint",
                     "options": {
                         "lintFilePatterns": [
-                            "projects/kypo-visualization-dashboard/**/*.ts",
-                            "projects/kypo-visualization-dashboard/**/*.component.html"
+                            "projects/visualization-dashboard/**/*.ts",
+                            "projects/visualization-dashboard/**/*.component.html"
                         ]
                     }
                 }
             }
         },
-        "kypo-visualization-dashboard-example": {
+        "visualization-dashboard-example": {
             "projectType": "application",
             "schematics": {
                 "@schematics/angular:application": {
                     "strict": true
                 }
             },
-            "root": "projects/kypo-visualization-dashboard-example",
-            "sourceRoot": "projects/kypo-visualization-dashboard-example/src",
+            "root": "projects/visualization-dashboard-example",
+            "sourceRoot": "projects/visualization-dashboard-example/src",
             "prefix": "app",
             "architect": {
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "dist/kypo-visualization-dashboard-example",
-                        "index": "projects/kypo-visualization-dashboard-example/src/index.html",
-                        "main": "projects/kypo-visualization-dashboard-example/src/main.ts",
-                        "polyfills": "projects/kypo-visualization-dashboard-example/src/polyfills.ts",
-                        "tsConfig": "projects/kypo-visualization-dashboard-example/tsconfig.app.json",
+                        "outputPath": "dist/visualization-dashboard-example",
+                        "index": "projects/visualization-dashboard-example/src/index.html",
+                        "main": "projects/visualization-dashboard-example/src/main.ts",
+                        "polyfills": "projects/visualization-dashboard-example/src/polyfills.ts",
+                        "tsConfig": "projects/visualization-dashboard-example/tsconfig.app.json",
                         "assets": [
-                            "projects/kypo-visualization-dashboard-example/src/favicon.ico",
-                            "projects/kypo-visualization-dashboard-example/src/assets"
+                            "projects/visualization-dashboard-example/src/favicon.ico",
+                            "projects/visualization-dashboard-example/src/assets"
                         ],
                         "styles": [
                             "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
                             "node_modules/normalize.css/normalize.css",
-                            "projects/kypo-visualization-dashboard-example/src/styles.css"
+                            "projects/visualization-dashboard-example/src/styles.css"
                         ],
                         "scripts": [],
                         "vendorChunk": true,
@@ -82,8 +82,8 @@
                         "production": {
                             "fileReplacements": [
                                 {
-                                    "replace": "projects/kypo-visualization-dashboard-example/src/environments/environment.ts",
-                                    "with": "projects/kypo-visualization-dashboard-example/src/environments/environment.prod.ts"
+                                    "replace": "projects/visualization-dashboard-example/src/environments/environment.ts",
+                                    "with": "projects/visualization-dashboard-example/src/environments/environment.prod.ts"
                                 }
                             ],
                             "optimization": true,
@@ -111,8 +111,8 @@
                             ],
                             "fileReplacements": [
                                 {
-                                    "replace": "projects/kypo-visualization-dashboard-example/src/environments/environment.ts",
-                                    "with": "projects/kypo-visualization-dashboard-example/src/environments/environment.local.ts"
+                                    "replace": "projects/visualization-dashboard-example/src/environments/environment.ts",
+                                    "with": "projects/visualization-dashboard-example/src/environments/environment.local.ts"
                                 }
                             ]
                         }
@@ -121,37 +121,37 @@
                 "serve": {
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "options": {
-                        "buildTarget": "kypo-visualization-dashboard-example:build"
+                        "buildTarget": "visualization-dashboard-example:build"
                     },
                     "configurations": {
                         "production": {
-                            "buildTarget": "kypo-visualization-dashboard-example:build:production"
+                            "buildTarget": "visualization-dashboard-example:build:production"
                         },
                         "local": {
-                            "buildTarget": "kypo-visualization-dashboard-example:build:local"
+                            "buildTarget": "visualization-dashboard-example:build:local"
                         }
                     }
                 },
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "buildTarget": "kypo-visualization-dashboard-example:build"
+                        "buildTarget": "visualization-dashboard-example:build"
                     }
                 },
                 "test": {
                     "builder": "@angular-devkit/build-angular:karma",
                     "options": {
-                        "main": "projects/kypo-visualization-dashboard-example/src/test.ts",
-                        "polyfills": "projects/kypo-visualization-dashboard-example/src/polyfills.ts",
-                        "tsConfig": "projects/kypo-visualization-dashboard-example/tsconfig.spec.json",
-                        "karmaConfig": "projects/kypo-visualization-dashboard-example/karma.conf.js",
+                        "main": "projects/visualization-dashboard-example/src/test.ts",
+                        "polyfills": "projects/visualization-dashboard-example/src/polyfills.ts",
+                        "tsConfig": "projects/visualization-dashboard-example/tsconfig.spec.json",
+                        "karmaConfig": "projects/visualization-dashboard-example/karma.conf.js",
                         "styles": [
-                            "projects/kypo-visualization-dashboard-example/src/styles.css"
+                            "projects/visualization-dashboard-example/src/styles.css"
                         ],
                         "scripts": [],
                         "assets": [
-                            "projects/kypo-visualization-dashboard-example/src/favicon.ico",
-                            "projects/kypo-visualization-dashboard-example/src/assets"
+                            "projects/visualization-dashboard-example/src/favicon.ico",
+                            "projects/visualization-dashboard-example/src/assets"
                         ]
                     }
                 },
@@ -159,8 +159,8 @@
                     "builder": "@angular-eslint/builder:lint",
                     "options": {
                         "lintFilePatterns": [
-                            "projects/kypo-visualization-dashboard-example/src/app/dashboard/**/*.ts",
-                            "projects/kypo-visualization-dashboard-example/src/app/dashboard/**/*.component.html"
+                            "projects/visualization-dashboard-example/src/app/dashboard/**/*.ts",
+                            "projects/visualization-dashboard-example/src/app/dashboard/**/*.component.html"
                         ]
                     }
                 }

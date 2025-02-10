@@ -10,14 +10,14 @@ export const environment = {
   production: false,
   sessionChecksEnabled: false,
   dashboardVisualizationConfig: {
-    trainingBasePath: API_URL + '/kypo-rest-training/api/v1/',
+    trainingBasePath: API_URL + '/training/api/v1/',
   },
   authConfig: {
     guardMainPageRedirect: 'visualization',
     guardLoginPageRedirect: 'login',
     interceptorAllowedUrls: [API_URL, AUTH_URL, 'https://localhost'],
     authorizationStrategyConfig: {
-      authorizationUrl: AUTH_URL + '/kypo-rest-user-and-group/api/v1/users/info',
+      authorizationUrl: AUTH_URL + '/user-and-group/api/v1/users/info',
     },
     providers: [
       {

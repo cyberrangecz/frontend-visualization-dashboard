@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'kypo-visualization-dashboard'`, () => {
+  it(`should have as title 'visualization-dashboard'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('kypo-visualization-dashboard');
+    expect(app.title).toEqual('visualization-dashboard');
   });
 
   it('should render title in a h1 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to kypo-visualization-dashboard!');
+    expect(compiled.querySelector('h1').textContent).toContain('Welcome to visualization-dashboard!');
   });
 });

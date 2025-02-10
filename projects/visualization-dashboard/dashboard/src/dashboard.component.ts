@@ -11,7 +11,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { MatSelectChange } from '@angular/material/select';
 
 @Component({
-  selector: 'kypo-dashboard',
+  selector: 'crczp-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
 })

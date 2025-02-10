@@ -1,5 +1,5 @@
 /*
- * Public API Surface of kypo-visualization-dashboard
+ * Public API Surface of visualization-dashboard
  */
 
 export { DashboardModule } from './dashboard.module';

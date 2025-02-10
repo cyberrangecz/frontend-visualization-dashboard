@@ -6,17 +6,17 @@ const BASE_URL = 'https://172.19.0.22';
 const HOME_URL = 'https://localhost:4200';
 
 export const environment = {
-  production: false,
+  production: true,
   sessionChecksEnabled: false,
   dashboardVisualizationConfig: {
-    trainingBasePath: BASE_URL + '/kypo-rest-training/api/v1/',
+    trainingBasePath: BASE_URL + '/training/api/v1/',
   },
   authConfig: {
     guardMainPageRedirect: 'visualizations',
     guardLoginPageRedirect: 'login',
-    interceptorAllowedUrls: [BASE_URL],
+    interceptorAllowedUrls: [BASE_URL, 'https://localhost'],
     authorizationStrategyConfig: {
-      authorizationUrl: BASE_URL + '/kypo-rest-user-and-group/api/v1/users/info',
+      authorizationUrl: BASE_URL + '/user-and-group/api/v1/users/info',
     },
     providers: [
       {

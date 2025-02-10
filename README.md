@@ -1,4 +1,4 @@
-# KYPO Dashboard Visualization
+# CyberRangeᶜᶻ Platform Dashboard Visualization
 
 This visualization dashboard unites several visualizations and provides interactions between them. Visualization filters allow the instructor to filter the training events and their format.
 
@@ -23,10 +23,10 @@ This visualization dashboard unites several visualizations and provides interact
 An example of use:
 
 ```typescript
-<kypo-dashboard [trainingInstanceId]="11"
+<crczp-dashboard [trainingInstanceId]="11"
                 [hasReferenceSolution]="true"
                 [trainingDefinitionId]="5">
-</kypo-dashboard>
+</crczp-dashboard>
 
 ```
 

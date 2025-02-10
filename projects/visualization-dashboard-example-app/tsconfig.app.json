@@ -5,10 +5,10 @@
         "types": [],
         "paths": {
             "@cyberrangecz-platform/visualization-dashboard": [
-                "../kypo-visualization-dashboard/src/public_api.ts"
+                "../visualization-dashboard/src/public_api.ts"
             ],
             "@cyberrangecz-platform/visualization-dashboard/*": [
-                "../kypo-visualization-dashboard/*/src/public_api.ts"
+                "../visualization-dashboard/*/src/public_api.ts"
             ]
         }
     },

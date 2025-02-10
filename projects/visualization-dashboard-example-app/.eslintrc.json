@@ -9,7 +9,7 @@
             ],
             "parserOptions": {
                 "project": [
-                    "projects/kypo-visualization-dashboard/tsconfig.*?.json"
+                    "projects/visualization-dashboard-example-app/tsconfig.*?.json"
                 ],
                 "createDefaultProgram": true
             },
@@ -18,7 +18,7 @@
                     "error",
                     {
                         "type": "attribute",
-                        "prefix": "kypo",
+                        "prefix": "app",
                         "style": "camelCase"
                     }
                 ],
@@ -26,7 +26,7 @@
                     "error",
                     {
                         "type": "element",
-                        "prefix": "kypo",
+                        "prefix": "app",
                         "style": "kebab-case"
                     }
                 ]
