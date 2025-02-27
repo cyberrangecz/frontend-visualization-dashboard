@@ -5,22 +5,25 @@ import { AppRoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment';
 import { SentinelAuthModule } from '@sentinel/auth';
 import { SentinelAuthGuardWithLogin, SentinelNegativeAuthGuard } from '@sentinel/auth/guards';
-import { D3Service } from '@cyberrangecz-platform/d3-service';
+import { D3Service } from '@crczp/d3-service';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { SentinelLayout1Module } from '@sentinel/layout/layout1';
+import { DashboardModule } from '@crczp/visualization-dashboard/dashboard';
+import { DashboardPageComponent } from './dashboard/dashboard-page.component';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    AppRoutingModule,
-    SentinelAuthModule.forRoot(environment.authConfig),
-    SentinelLayout1Module,
-  ],
-  providers: [SentinelAuthGuardWithLogin, SentinelNegativeAuthGuard, D3Service],
-  bootstrap: [AppComponent],
+    declarations: [AppComponent, DashboardPageComponent],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        AppRoutingModule,
+        DashboardModule.forRoot(environment.dashboardVisualizationConfig),
+        SentinelAuthModule.forRoot(environment.authConfig),
+        SentinelLayout1Module,
+    ],
+    providers: [SentinelAuthGuardWithLogin, SentinelNegativeAuthGuard, D3Service],
+    bootstrap: [AppComponent],
 })
 export class AppModule {}

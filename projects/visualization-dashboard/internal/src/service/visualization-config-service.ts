@@ -6,12 +6,12 @@ import { VisualizationDashboardConfig } from '../model/visualization-dashboard-c
  */
 @Injectable()
 export class VisualizationConfigService {
-  /**
-   * Config provided by client
-   */
-  config: VisualizationDashboardConfig;
+    /**
+     * Config provided by client
+     */
+    config: VisualizationDashboardConfig;
 
-  constructor(config: VisualizationDashboardConfig) {
-    this.config = config;
-  }
+    constructor(config: VisualizationDashboardConfig) {
+        this.config = config;
+    }
 }

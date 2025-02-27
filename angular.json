@@ -49,26 +49,27 @@
                     "strict": true
                 }
             },
-            "root": "projects/visualization-dashboard-example",
-            "sourceRoot": "projects/visualization-dashboard-example/src",
+            "root": "projects/visualization-dashboard-example-app",
+            "sourceRoot": "projects/visualization-dashboard-example-app/src",
             "prefix": "app",
             "architect": {
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
                         "outputPath": "dist/visualization-dashboard-example",
-                        "index": "projects/visualization-dashboard-example/src/index.html",
-                        "main": "projects/visualization-dashboard-example/src/main.ts",
-                        "polyfills": "projects/visualization-dashboard-example/src/polyfills.ts",
-                        "tsConfig": "projects/visualization-dashboard-example/tsconfig.app.json",
+                        "index": "projects/visualization-dashboard-example-app/src/index.html",
+                        "main": "projects/visualization-dashboard-example-app/src/main.ts",
+                        "polyfills": "projects/visualization-dashboard-example-app/src/polyfills.ts",
+                        "tsConfig": "projects/visualization-dashboard-example-app/tsconfig.app.json",
                         "assets": [
-                            "projects/visualization-dashboard-example/src/favicon.ico",
-                            "projects/visualization-dashboard-example/src/assets"
+                            {
+                                "glob": "**/*",
+                                "input": "node_modules/@crczp/theme/assets",
+                                "output": "assets/"
+                            }
                         ],
                         "styles": [
-                            "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-                            "node_modules/normalize.css/normalize.css",
-                            "projects/visualization-dashboard-example/src/styles.css"
+                            "node_modules/@crczp/theme/theming/apply-all.scss"
                         ],
                         "scripts": [],
                         "vendorChunk": true,
@@ -82,8 +83,8 @@
                         "production": {
                             "fileReplacements": [
                                 {
-                                    "replace": "projects/visualization-dashboard-example/src/environments/environment.ts",
-                                    "with": "projects/visualization-dashboard-example/src/environments/environment.prod.ts"
+                                    "replace": "projects/visualization-dashboard-example-app/src/environments/environment.ts",
+                                    "with": "projects/visualization-dashboard-example-app/src/environments/environment.prod.ts"
                                 }
                             ],
                             "optimization": true,
@@ -111,8 +112,8 @@
                             ],
                             "fileReplacements": [
                                 {
-                                    "replace": "projects/visualization-dashboard-example/src/environments/environment.ts",
-                                    "with": "projects/visualization-dashboard-example/src/environments/environment.local.ts"
+                                    "replace": "projects/visualization-dashboard-example-app/src/environments/environment.ts",
+                                    "with": "projects/visualization-dashboard-example-app/src/environments/environment.local.ts"
                                 }
                             ]
                         }
@@ -141,26 +142,29 @@
                 "test": {
                     "builder": "@angular-devkit/build-angular:karma",
                     "options": {
-                        "main": "projects/visualization-dashboard-example/src/test.ts",
-                        "polyfills": "projects/visualization-dashboard-example/src/polyfills.ts",
-                        "tsConfig": "projects/visualization-dashboard-example/tsconfig.spec.json",
-                        "karmaConfig": "projects/visualization-dashboard-example/karma.conf.js",
-                        "styles": [
-                            "projects/visualization-dashboard-example/src/styles.css"
-                        ],
-                        "scripts": [],
+                        "main": "projects/visualization-dashboard-example-app/src/test.ts",
+                        "polyfills": "projects/visualization-dashboard-example-app/src/polyfills.ts",
+                        "tsConfig": "projects/visualization-dashboard-example-app/tsconfig.spec.json",
+                        "karmaConfig": "projects/visualization-dashboard-example-app/karma.conf.js",
                         "assets": [
-                            "projects/visualization-dashboard-example/src/favicon.ico",
-                            "projects/visualization-dashboard-example/src/assets"
-                        ]
+                            {
+                                "glob": "**/*",
+                                "input": "node_modules/@crczp/theme/assets",
+                                "output": "assets/"
+                            }
+                        ],
+                        "styles": [
+                            "node_modules/@crczp/theme/theming/apply-all.scss"
+                        ],
+                        "scripts": []
                     }
                 },
                 "lint": {
                     "builder": "@angular-eslint/builder:lint",
                     "options": {
                         "lintFilePatterns": [
-                            "projects/visualization-dashboard-example/src/app/dashboard/**/*.ts",
-                            "projects/visualization-dashboard-example/src/app/dashboard/**/*.component.html"
+                            "projects/visualization-dashboard-example-app/src/app/dashboard/**/*.ts",
+                            "projects/visualization-dashboard-example-app/src/app/dashboard/**/*.component.html"
                         ]
                     }
                 }

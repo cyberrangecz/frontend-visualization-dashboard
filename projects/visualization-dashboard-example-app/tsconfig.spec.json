@@ -8,10 +8,10 @@
             "node"
         ],
         "paths": {
-            "@cyberrangecz-platform/visualization-dashboard": [
+            "@crczp/visualization-dashboard": [
                 "../visualization-dashboard/src/public_api.ts"
             ],
-            "@cyberrangecz-platform/visualization-dashboard/*": [
+            "@crczp/visualization-dashboard/*": [
                 "../visualization-dashboard/*/src/public_api.ts"
             ]
         }

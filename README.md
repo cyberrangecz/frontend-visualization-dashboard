@@ -10,14 +10,6 @@ This visualization dashboard unites several visualizations and provides interact
 4. Run the app in a local environment and ssl via `npm run start`.
 5. Navigate to `https://localhost:4200/`. The app will automatically reload if you change any of the source files. The app will use a self-signed certificate, so you will need to accept it in the browser.
 
-## Input parameters
-
-`trainingInstanceId: number;`
-
-`trainingDefinitionId: number; `
-
-`hasReferenceSolution: boolean; ` to determine if there is a reference graph available for display
-
 ## How to Use as a Library
 
 An example of use:
@@ -30,6 +22,10 @@ An example of use:
 
 ```
 
+## Input parameters
 
+`trainingInstanceId: number;`
 
+`trainingDefinitionId: number; `
 
+`hasReferenceSolution: boolean; ` to determine if there is a reference graph available for display

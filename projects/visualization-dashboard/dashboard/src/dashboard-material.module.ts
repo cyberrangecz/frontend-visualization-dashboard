@@ -8,23 +8,23 @@ import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
-  imports: [
-    MatSidenavModule,
-    MatButtonModule,
-    MatTabsModule,
-    MatExpansionModule,
-    MatCheckboxModule,
-    MatOptionModule,
-    MatSelectModule,
-  ],
-  exports: [
-    MatSidenavModule,
-    MatButtonModule,
-    MatTabsModule,
-    MatExpansionModule,
-    MatCheckboxModule,
-    MatOptionModule,
-    MatSelectModule,
-  ],
+    imports: [
+        MatSidenavModule,
+        MatButtonModule,
+        MatTabsModule,
+        MatExpansionModule,
+        MatCheckboxModule,
+        MatOptionModule,
+        MatSelectModule,
+    ],
+    exports: [
+        MatSidenavModule,
+        MatButtonModule,
+        MatTabsModule,
+        MatExpansionModule,
+        MatCheckboxModule,
+        MatOptionModule,
+        MatSelectModule,
+    ],
 })
 export class DashboardMaterialModule {}

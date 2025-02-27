@@ -5,5 +5,5 @@ Dashboard component wraps existing visualization and allows interaction between 
 ## Usage
 
 ```angular2html
-<crczp-dashboard [trainingInstanceId]="trainingInstanceId"></crczp-dashboard>
+<crczp-dashboard [trainingInstanceId]="trainingInstanceId"/>
 ```

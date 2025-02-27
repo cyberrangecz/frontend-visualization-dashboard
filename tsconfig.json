@@ -16,10 +16,10 @@
             "dom"
         ],
         "paths": {
-            "@cyberrangecz-platform/visualization-dashboard/dashboard": [
+            "@crczp/visualization-dashboard/dashboard": [
                 "./dashboard/src/public_api.ts"
             ],
-            "@cyberrangecz-platform/visualization-dashboard/internal": [
+            "@crczp/visualization-dashboard/internal": [
                 "./internal/src/public_api.ts"
             ]
         }

@@ -1,0 +1,11 @@
+{
+    "/training/api/v1/visualizations/training-runs/:id/clustering": "/clustering",
+    "/training/api/v1/visualizations/training-instances/:id/clustering": "/clustering",
+    "/training/api/v1/visualizations/training-instances/clustering?instanceIds=:ids": "/clustering",
+    "/training/api/v1/visualizations/training-runs/:id/table": "/table",
+    "/training/api/v1/visualizations/training-runs/:id/timeline": "/timeline",
+    "/training/api/v1/visualizations/training-instances/:id/timeline": "/timeline",
+    "/training/api/v1/visualizations/training-instances/:id/progress": "/progress",
+    "/training/api/v1/visualizations/graphs/summary/training-instances/:id": "/summary_graph",
+    "/training/api/v1/visualizations/graphs/reference/training-instances/:id": "/reference_graph"
+}

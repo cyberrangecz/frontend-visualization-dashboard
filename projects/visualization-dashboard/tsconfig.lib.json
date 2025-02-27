@@ -4,6 +4,7 @@
         "outDir": "../../out-tsc/lib",
         "target": "es2020",
         "declaration": true,
+        "sourceMap": true,
         "inlineSources": true,
         "types": [],
         "lib": [
@@ -11,10 +12,10 @@
             "es2018"
         ],
         "paths": {
-            "@cyberrangecz-platform/visualization-dashboard/dashboard": [
+            "@crczp/visualization-dashboard/dashboard": [
                 "./dashboard/src/public_api.ts"
             ],
-            "@cyberrangecz-platform/visualization-dashboard/internal": [
+            "@crczp/visualization-dashboard/internal": [
                 "./internal/src/public_api.ts"
             ]
         }
