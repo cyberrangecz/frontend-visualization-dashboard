@@ -1,6 +1,6 @@
 {
     "name": "@crczp/visualization-dashboard",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "license": "MIT",
     "peerDependencies": {
         "@angular/common": "^18.2.13",
@@ -15,5 +15,9 @@
     },
     "dependencies": {
         "tslib": "^2.7.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/cyberrangecz/frontend-visualization-dashboard.git"
     }
 }
