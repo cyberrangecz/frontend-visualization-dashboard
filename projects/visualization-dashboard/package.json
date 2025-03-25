@@ -1,6 +1,6 @@
 {
     "name": "@crczp/visualization-dashboard",
-    "version": "0.0.3",
+    "version": "1.0.0",
     "license": "MIT",
     "peerDependencies": {
         "@angular/common": "^18.2.13",
@@ -9,9 +9,9 @@
         "d3": "^7.9.0",
         "d3-graphviz": "^5.6.0",
         "@types/d3": "^7.4.3",
-        "@crczp/d3-service": "^0.0.3",
-        "@crczp/hurdling-visualization": "^0.0.2",
-        "@crczp/overview-visualization": "^0.0.2"
+        "@crczp/d3-service": "^1.0.0",
+        "@crczp/hurdling-visualization": "^1.0.0",
+        "@crczp/overview-visualization": "^1.0.0"
     },
     "dependencies": {
         "tslib": "^2.7.0"
